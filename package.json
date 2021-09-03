@@ -38,6 +38,7 @@
     "*.{js,jsx,vue}": [
       "vue-cli-service lint",
       "npm run fix",
+      "npm run test",
       "git add"
     ]
   }
