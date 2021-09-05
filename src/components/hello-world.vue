@@ -22,6 +22,10 @@ export default {
     props: {
         msg: String,
     },
+    mounted() {
+        const debugTest = 'debug work?';
+        console.log(debugTest);
+    },
 };
 </script>
 

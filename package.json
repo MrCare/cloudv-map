@@ -39,5 +39,12 @@
       "vue-cli-service lint",
       "git add"
     ]
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,vue}",
+      "!**/node_modules/**"
+    ]
   }
 }
