@@ -24,14 +24,14 @@
 
 <script>
 export default {
-  props: {
-    msg: String,
-  },
-  data() {
-    return {
-      count: 0,
-    };
-  },
+    props: {
+        msg: String,
+    },
+    data() {
+        return {
+            count: 0,
+        };
+    },
 };
 </script>
 
