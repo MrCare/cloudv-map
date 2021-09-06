@@ -1,0 +1,35 @@
+{
+  "name": "vue2-vite",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "lint": "lint-staged",
+    "prepare": "husky install",
+    "test": "jest"
+  },
+  "dependencies": {
+    "element-ui": "^2.15.6",
+    "vite-plugin-vue2": "^1.4.0",
+    "vue": "^2.6.12",
+    "vue-router": "^3.5.2",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-vue": "^7.17.0",
+    "husky": "^7.0.0",
+    "jest": "^27.1.0",
+    "lint-staged": "^11.1.2",
+    "vite": "^2.0.5"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "eslint --fix",
+      "git add ."
+    ]
+  }
+}
