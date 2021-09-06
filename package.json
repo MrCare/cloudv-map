@@ -7,7 +7,7 @@
     "serve": "vite preview",
     "lint": "lint-staged",
     "prepare": "husky install",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "dependencies": {
     "element-ui": "^2.15.6",
