@@ -27,4 +27,14 @@ module.exports = {
         }],
         'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
     },
+    settings: {
+        'import/resolver': {
+            alias: {
+                map: [
+                    ['@', './src/'],
+                    ['@scss', './src/styles/'],
+                ],
+            },
+        },
+    },
 };
