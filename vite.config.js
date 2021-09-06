@@ -3,7 +3,9 @@ const { createVuePlugin } = require('vite-plugin-vue2');
 
 module.exports = {
     plugins: [createVuePlugin()],
-    alias: {
-        '@': path.resolve(__dirname, 'src'),
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, 'src'),
+        },
     },
 };
