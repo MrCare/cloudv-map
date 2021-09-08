@@ -1,5 +1,6 @@
 const markers = [
     {
+        type: 'Feature',
         properties: {
             text: 'a',
         },
@@ -12,6 +13,7 @@ const markers = [
         },
     },
     {
+        type: 'Feature',
         properties: {
             text: 'b',
         },
@@ -24,6 +26,7 @@ const markers = [
         },
     },
     {
+        type: 'Feature',
         properties: {
             text: 'c',
         },
@@ -36,6 +39,7 @@ const markers = [
         },
     },
     {
+        type: 'Feature',
         properties: {
             text: 'd',
         },
@@ -48,6 +52,7 @@ const markers = [
         },
     },
     {
+        type: 'Feature',
         properties: {
             text: 'e',
         },
@@ -60,6 +65,7 @@ const markers = [
         },
     },
     {
+        type: 'Feature',
         properties: {
             text: 'f',
         },
@@ -72,6 +78,7 @@ const markers = [
         },
     },
     {
+        type: 'Feature',
         properties: {
             text: 'g',
         },
@@ -84,6 +91,7 @@ const markers = [
         },
     },
     {
+        type: 'Feature',
         properties: {
             text: 'h',
         },
@@ -96,6 +104,7 @@ const markers = [
         },
     },
     {
+        type: 'Feature',
         properties: {
             text: 'i',
         },
@@ -108,6 +117,7 @@ const markers = [
         },
     },
     {
+        type: 'Feature',
         properties: {
             text: 'g',
         },
@@ -120,6 +130,7 @@ const markers = [
         },
     },
     {
+        type: 'Feature',
         properties: {
             text: 'k',
         },
@@ -132,6 +143,7 @@ const markers = [
         },
     },
     {
+        type: 'Feature',
         properties: {
             text: 'l',
         },
@@ -144,6 +156,7 @@ const markers = [
         },
     },
     {
+        type: 'Feature',
         properties: {
             text: 'm',
         },
@@ -156,6 +169,7 @@ const markers = [
         },
     },
     {
+        type: 'Feature',
         properties: {
             text: 'n',
         },
@@ -168,6 +182,7 @@ const markers = [
         },
     },
     {
+        type: 'Feature',
         properties: {
             text: 'o',
         },
@@ -180,6 +195,7 @@ const markers = [
         },
     },
     {
+        type: 'Feature',
         properties: {
             text: 'p',
         },
@@ -192,6 +208,7 @@ const markers = [
         },
     },
     {
+        type: 'Feature',
         properties: {
             text: 'q',
         },
@@ -204,6 +221,7 @@ const markers = [
         },
     },
     {
+        type: 'Feature',
         properties: {
             text: 'r',
         },
@@ -216,6 +234,7 @@ const markers = [
         },
     },
     {
+        type: 'Feature',
         properties: {
             text: 's',
         },

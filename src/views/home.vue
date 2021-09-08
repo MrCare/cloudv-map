@@ -8,13 +8,15 @@
                 :fullScreen="fullScreen"
                 :markers="markers"
                 :polygons="polygons"
+                :lines="lines"
             ></cloudv-map>
         </div>
     </div>
 </template>
 <script>
 import markers from '@/mocks/markers.js';
-import polygons from '@/mocks/polygon.js';
+import polygons from '@/mocks/polygons.js';
+import lines from '@/mocks/lines.js';
 
 export default {
     data() {
@@ -24,6 +26,7 @@ export default {
             fullScreen: true,
             markers,
             polygons,
+            lines,
         };
     },
 };

@@ -37,6 +37,11 @@ export default {
             require: false,
             default: null,
         },
+        lines: {
+            type: Object,
+            require: false,
+            default: null,
+        },
         fullScreen: {
             type: Boolean,
             require: false,
@@ -50,6 +55,7 @@ export default {
                 raster: this.raster,
                 markers: this.markers,
                 polygons: this.polygons,
+                lines: this.lines,
                 layers: this.layers,
                 fullScreen: this.fullScreen,
             };
@@ -61,7 +67,7 @@ export default {
             deep: true,
             async handler(val) {
                 const {
-                    server, raster, markers, polygons, layers, fullScreen,
+                    server, raster, markers, polygons, lines, layers, fullScreen,
                 } = val;
                 // 初始化栅格图层
                 this.map = await this.initMapWithMeta({ server, raster, map: this.map });
@@ -70,7 +76,9 @@ export default {
                 // 添加点
                 this.addMarkers({ markers, map: this.map });
                 // 添加面
-                this.addPologons({ polygons, map: this.map });
+                this.addPolygons({ polygons, map: this.map });
+                // 添加线
+                this.addLines({ lines, map: this.map });
                 // 添加矢量图层
                 this.addVectorLayers({ layers, map: this.map });
             },
@@ -177,32 +185,69 @@ export default {
             console.info(markers);
         },
         /**
-         * 添加面
+         * 添加 polygon 集合
          */
-        addPologons({ polygons, map }) {
+        addPolygons({ polygons, map }) {
             if (!map || !polygons) {
                 return;
             }
-            map.on('load', () => {
-                map.addSource('polygons', {
+            /**
+             * 添加单独的 polygon
+             */
+            const addPolygon = ({ polygon, id, m }) => {
+                m.addSource(id, {
                     type: 'geojson',
-                    data: polygons,
+                    data: polygon,
                 });
-                map.addLayer({
-                    id: 'polygons-fill',
+                m.addLayer({
+                    id: `${id}-fill`,
                     // References the GeoJSON source defined above
                     // and does not require a `source-layer`
-                    source: 'polygons',
+                    source: id,
                     type: 'fill', // reference the data source
                     layout: {},
                     paint: {
-                        'fill-color': '#0080ff', // blue color fill
-                        'fill-opacity': 0.7,
+                        'fill-color': polygon.properties['fill-color'], // blue color fill
+                        'fill-opacity': polygon.properties['fill-opacity'],
                     },
                 });
-                map.addLayer({
-                    id: 'polygons-outline',
-                    source: 'polygons',
+                m.addLayer({
+                    id: `${id}-outline`,
+                    source: id,
+                    type: 'line',
+                    layout: {},
+                    paint: {
+                        'line-color': polygon.properties['line-color'],
+                        'line-width': polygon.properties['line-width'],
+                    },
+                });
+            };
+            // 加载
+            map.on('load', () => {
+                polygons.features.forEach((polygon, index) => {
+                    const id = `polygon-${String(index)}`;
+                    addPolygon({ polygon, id, m: map });
+                });
+            });
+        },
+        /**
+         * 添加线
+         */
+        addLines({ lines, map }) {
+            if (!map || !lines) {
+                return;
+            }
+            /**
+             * 添加单独的线
+             */
+            const addLine = ({ line, id, m }) => {
+                m.addSource(id, {
+                    type: 'geojson',
+                    data: line,
+                });
+                m.addLayer({
+                    id: `${id}-outline`,
+                    source: id,
                     type: 'line',
                     layout: {},
                     paint: {
@@ -210,16 +255,22 @@ export default {
                         'line-width': 2,
                     },
                 });
+            };
+            // 加载
+            map.on('load', () => {
+                lines.features.forEach((line, index) => {
+                    const id = `line-${String(index)}`;
+                    addLine({ line, id, m: map });
+                });
             });
         },
         /**
-         * TODO:添加矢量图层
+         * TODO:添加矢量图层 (其实也不用了)
          */
         addVectorLayers({ layers, map }) {
             if (!map) {
                 return;
             }
-
             console.info(layers);
         },
     },

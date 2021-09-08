@@ -3,12 +3,14 @@ const polygons = {
     features: [
         {
             type: 'Feature',
+            properties: {
+                'fill-color': '#0080ff', // blue color fill
+                'fill-opacity': 0.7,
+                'line-color': '#fff',
+                'line-width': 2,
+            },
             geometry: {
                 type: 'Polygon',
-                properties: {
-                    'fill-color': '#0080ff', // blue color fill
-                    'fill-opacity': 0.7,
-                },
                 coordinates:
                     [
                         [
@@ -118,6 +120,12 @@ const polygons = {
         },
         {
             type: 'Feature',
+            properties: {
+                'fill-color': '#118000', // blue color fill
+                'fill-opacity': 0.7,
+                'line-color': '#fff',
+                'line-width': 2,
+            },
             geometry: {
                 type: 'Polygon',
                 coordinates: [
@@ -228,12 +236,14 @@ const polygons = {
         },
         {
             type: 'Feature',
+            properties: {
+                'fill-color': '#2280ee', // blue color fill
+                'fill-opacity': 0.7,
+                'line-color': '#fff',
+                'line-width': 2,
+            },
             geometry: {
                 type: 'Polygon',
-                properties: {
-                    'fill-color': '#0080ee', // blue color fill
-                    'fill-opacity': 0.7,
-                },
                 coordinates:
                     [
                         [
@@ -363,12 +373,14 @@ const polygons = {
         },
         {
             type: 'Feature',
+            properties: {
+                'fill-color': '#3380dd', // blue color fill
+                'fill-opacity': 0.7,
+                'line-color': '#fff',
+                'line-width': 2,
+            },
             geometry: {
                 type: 'Polygon',
-                properties: {
-                    'fill-color': '#0080dd', // blue color fill
-                    'fill-opacity': 0.7,
-                },
                 coordinates:
                     [
                         [
@@ -486,12 +498,14 @@ const polygons = {
         },
         {
             type: 'Feature',
+            properties: {
+                'fill-color': '#0080cc', // blue color fill
+                'fill-opacity': 0.7,
+                'line-color': '#fff',
+                'line-width': 2,
+            },
             geometry: {
                 type: 'Polygon',
-                properties: {
-                    'fill-color': '#0080cc', // blue color fill
-                    'fill-opacity': 0.7,
-                },
                 coordinates:
                     [
                         [
@@ -593,12 +607,14 @@ const polygons = {
         },
         {
             type: 'Feature',
+            properties: {
+                'fill-color': '#5580bb', // blue color fill
+                'fill-opacity': 0.7,
+                'line-color': '#fff',
+                'line-width': 2,
+            },
             geometry: {
                 type: 'Polygon',
-                properties: {
-                    'fill-color': '#0080bb', // blue color fill
-                    'fill-opacity': 0.7,
-                },
                 coordinates:
                     [
                         [
