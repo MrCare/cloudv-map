@@ -1,11 +1,10 @@
-# vite-vue2-starter
+# cloudv-map
 
-A simple start for using vue2 with vite, using [underfin's vite-plugin-vue2](https://github.com/underfin/vite-plugin-vue2).
+基于`mapbox-gl`封装的`vue`组件，以简单的方式使用`mapbox-gl`
 
-## Scripts
+## 使用说明
 
-```bash
-  npm run dev # start dev server
-  npm run build # build for production
-  npm run serve # locally preview production build
-```
+1. 加载自定义图层
+2. 加载 polygon 面地图数据
+3. 加载 markers 点地图数据
+4. 加载 lines 线地图数据
